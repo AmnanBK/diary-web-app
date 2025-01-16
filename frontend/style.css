@@ -22,12 +22,9 @@ body {
 }
 
 .add-btn {
-	position: sticky;
-	top: 80vh;
-	left: 90vw;
-}
-
-.add-btn {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
@@ -36,7 +33,6 @@ body {
 	display: grid;
 	place-items: center;
 	cursor: pointer;
-	position: relative;
 	box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.3);
 	transition: all 300ms ease;
 }
@@ -44,4 +40,20 @@ body {
 .add-btn svg {
 	width: 30px;
 	display: flex;
+}
+
+.add-btn:hover {
+	animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-5px);
+	}
+	100% {
+		transform: translateY(0);
+	}
 }
