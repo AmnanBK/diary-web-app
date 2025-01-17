@@ -11,8 +11,12 @@
 	box-sizing: border-box;
 }
 
+a {
+	text-decoration: none;
+}
+
 body {
-	background-color: #e7bcdF0E6EFe;
+	background-color: #f0e6ef;
 }
 
 .main-title {
@@ -34,12 +38,12 @@ body {
 	place-items: center;
 	cursor: pointer;
 	box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.3);
-	transition: all 300ms ease;
 }
 
-.add-btn svg {
-	width: 30px;
+.add-btn .bi-plus {
+	font-size: 40px;
 	display: flex;
+	color: white;
 }
 
 .add-btn:hover {
@@ -55,5 +59,103 @@ body {
 	}
 	100% {
 		transform: translateY(0);
+	}
+}
+
+.card-container {
+	margin: 0 10px;
+	padding: 10px;
+	display: grid;
+	grid-template-columns: repeat(4, minmax(100px, 1fr));
+	jusity-content: space-evenly;
+	gap: 20px;
+}
+
+.wrapper {
+	height: 200px;
+	position: relative;
+	background-color: #e7bcde;
+	border-radius: 30px;
+}
+
+.wrapper .card {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	transform: rotateY(0deg);
+	transition: 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	text-align: center;
+	backface-visibility: hidden;
+}
+
+.wrapper:hover > .front-face {
+	transform: rotateY(-180deg);
+}
+
+.wrapper:hover > .back-face {
+	transform: rotateY(0deg);
+}
+
+.wrapper .front-face {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.wrapper .back-face {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	transform: rotateY(180deg);
+}
+
+.wrapper .back-face .card-content {
+	text-align: justify;
+	padding: 20px 30px;
+	font-size: 1.3em;
+	color: rgb(0, 0, 0);
+}
+
+.wrapper .back-face .card-footer {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding: 5px 30px 10px;
+	text-align: center;
+	font-size: 1em;
+	color: rgb(0, 0, 0);
+	background-color: #f0a6ca;
+	border-radius: 0 0 30px 30px;
+}
+
+.wrapper .back-face .card-footer .action-btn {
+	min-width: 50px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.wrapper .back-face .card-footer .action-btn .bi {
+	color: black;
+}
+
+.wrapper .back-face .card-footer .action-btn .bi:hover {
+	color: white;
+}
+
+@media (max-width: 1024px) {
+	.card-container {
+		grid-template-columns: repeat(3, minmax(200px, 1fr));
+	}
+}
+
+@media (max-width: 768px) {
+	.card-container {
+		grid-template-columns: repeat(2, minmax(200px, 1fr));
+	}
+}
+
+@media (max-width: 480px) {
+	.card-container {
+		grid-template-columns: 1fr;
 	}
 }
