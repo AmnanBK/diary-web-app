@@ -159,3 +159,115 @@ body {
 		grid-template-columns: 1fr;
 	}
 }
+
+form {
+	display: flex;
+	margin: auto;
+	flex-direction: column;
+	align-items: center;
+	width: 90vw;
+	background-color: #f0a6ca;
+	border-radius: 30px;
+}
+
+label {
+	font-size: 1.5em;
+	color: black;
+}
+
+input,
+textarea {
+	padding: 10px;
+	font-size: 16px;
+	font-family: Arial, sans-serif;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+	transition: all 0.3s ease;
+	width: 100%; /* Ensures full-width on both input and textarea */
+	box-sizing: border-box; /* Prevents padding from affecting width */
+}
+
+input:focus,
+textarea:focus {
+	border-color: #007bff;
+	background-color: #fff;
+	outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+	color: #aaa;
+	font-style: italic;
+}
+
+input:disabled,
+textarea:disabled {
+	background-color: #e0e0e0;
+	border-color: #ddd;
+}
+
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Optional: Set minimum height for textarea */
+textarea {
+	min-height: 50vh; /* Set to whatever height you prefer */
+}
+
+.form-title,
+.form-content {
+	width: 100%;
+	display: flex;
+	padding: 20px 20px;
+	flex-direction: column;
+}
+
+.action {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+#btn-add {
+	width: 20%;
+	padding: 10px;
+	margin-bottom: 10px;
+	background-color: #9c89b8;
+	color: white;
+	font-size: 1.1rem;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#btn-cancel {
+	width: 20%;
+	padding: 10px;
+	margin-bottom: 10px;
+	background-color: #9c89b8;
+	color: white;
+	font-size: 1.1rem;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+	#btn-add,
+	#btn-cancel {
+		width: 25%; /* Make buttons wider to fit text in smaller screens */
+	}
+}
+
+@media (max-width: 480px) {
+	#btn-add,
+	#btn-cancel {
+		width: 30%; /* Make buttons even wider for very small screens */
+	}
+}
