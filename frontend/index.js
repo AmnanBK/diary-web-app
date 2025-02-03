@@ -1,5 +1,16 @@
+function initializeLocalStorage() {
+	if (!localStorage.getItem("userDiary")) {
+		const data = {
+			dataCount: 0,
+			diaries: [],
+		};
+		localStorage.setItem("userDiary", JSON.stringify(data));
+	}
+}
+
 async function loadData() {
 	try {
+		initializeLocalStorage();
 		const data = JSON.parse(localStorage.getItem("userDiary"));
 		createCards(data.diaries);
 		localStorage.setItem("userDiary", JSON.stringify(data));
