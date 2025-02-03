@@ -1,7 +1,6 @@
 async function loadData() {
 	try {
-		const response = await fetch("data.json");
-		const data = await response.json();
+		const data = JSON.parse(localStorage.getItem("userDiary"));
 		createCards(data.diaries);
 		localStorage.setItem("userDiary", JSON.stringify(data));
 	} catch (error) {
@@ -45,13 +44,14 @@ function createCards(data) {
 		actionBtns.classList.add("action-btn");
 
 		const editLink = document.createElement("a");
-		editLink.href = "#";
+		editLink.href = `edit.html?id=${id}`;
 		const editIcon = document.createElement("i");
 		editIcon.classList.add("bi", "bi-pencil-square");
 		editLink.appendChild(editIcon);
 
 		const deleteLink = document.createElement("a");
 		deleteLink.href = "#";
+		deleteLink.setAttribute("id", `delete-${id}`);
 		const deleteIcon = document.createElement("i");
 		deleteIcon.classList.add("bi", "bi-x-square");
 		deleteLink.appendChild(deleteIcon);
@@ -67,7 +67,25 @@ function createCards(data) {
 		wrapper.appendChild(backFace);
 
 		cardContainer.appendChild(wrapper);
+
+		deleteLink.addEventListener("click", (e) => {
+			e.preventDefault(); // Prevent the default link action
+			deleteDiary(id);
+		});
 	});
+}
+
+function deleteDiary(id) {
+	let data = JSON.parse(localStorage.getItem("userDiary"));
+
+	data.diaries = data.diaries.filter((diary) => diary.id !== id);
+
+	data.dataCount = data.diaries.length;
+
+	localStorage.setItem("userDiary", JSON.stringify(data));
+
+	document.querySelector(".card-container").innerHTML = "";
+	loadData();
 }
 
 loadData();
