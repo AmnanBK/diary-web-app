@@ -81,7 +81,7 @@ function createCards(data) {
 
 		wrapper.addEventListener("click", (e) => {
 			e.preventDefault();
-			window.location.href = `detail.html?id=${id}`;
+			window.location.href = `frontend/detail.html?id=${id}`;
 		});
 
 		deleteLink.addEventListener("click", (e) => {
