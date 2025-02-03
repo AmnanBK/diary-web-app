@@ -80,7 +80,7 @@ function createCards(data) {
 		cardContainer.appendChild(wrapper);
 
 		deleteLink.addEventListener("click", (e) => {
-			e.preventDefault(); // Prevent the default link action
+			e.preventDefault();
 			deleteDiary(id);
 		});
 	});

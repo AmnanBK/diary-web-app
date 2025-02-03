@@ -40,10 +40,14 @@ body {
 	box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.3);
 }
 
-.add-btn .bi-plus {
+.add-btn .bi {
 	font-size: 40px;
 	display: flex;
 	color: white;
+}
+
+.add-btn .bi-house-door {
+	font-size: 30px;
 }
 
 .add-btn:hover {
@@ -270,4 +274,12 @@ textarea {
 	#btn-cancel {
 		width: 30%; /* Make buttons even wider for very small screens */
 	}
+}
+
+.content-container {
+	background-color: #f0a6ca;
+	margin: 20px 30px;
+	border-radius: 30px;
+	padding: 30px;
+	min-height: 80vh;
 }
