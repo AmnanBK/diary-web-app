@@ -15,9 +15,9 @@ addBtn.addEventListener("click", () => {
 	data.dataCount++;
 	localStorage.setItem("userDiary", JSON.stringify(data));
 	console.log(data);
-	window.location.href = "index.html";
+	window.location.href = "../index.html";
 });
 
 cancelBtn.addEventListener("click", () => {
-	window.location.href = "index.html";
+	window.location.href = "../index.html";
 });
