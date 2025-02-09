@@ -84,7 +84,7 @@ function createCards(data) {
 
 		wrapper.addEventListener("click", (e) => {
 			e.preventDefault();
-			window.location.href = `frontend/detail.html?id=${id}`;
+			window.location.href = `html/detail.html?id=${id}`;
 		});
 
 		deleteLink.addEventListener("click", (e) => {
@@ -99,8 +99,6 @@ function deleteDiary(id) {
 	let data = JSON.parse(localStorage.getItem("userDiary"));
 
 	data.diaries = data.diaries.filter((diary) => diary.id !== id);
-
-	data.dataCount = data.diaries.length;
 
 	localStorage.setItem("userDiary", JSON.stringify(data));
 
