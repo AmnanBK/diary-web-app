@@ -40,8 +40,8 @@ function createCards(data) {
 
 		const cardContent = document.createElement("p");
 		cardContent.classList.add("card-content");
-		if (content.length > 130) {
-			content = content.substring(0, 130) + "...";
+		if (content.length > 110) {
+			content = content.substring(0, 110) + "...";
 		}
 		cardContent.textContent = content;
 		backFace.appendChild(cardContent);
