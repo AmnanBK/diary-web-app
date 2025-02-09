@@ -58,13 +58,11 @@ function createCards(data) {
 		actionBtns.classList.add("action-btn");
 
 		const editLink = document.createElement("a");
-		editLink.href = `edit.html?id=${id}`;
 		const editIcon = document.createElement("i");
 		editIcon.classList.add("bi", "bi-pencil-square");
 		editLink.appendChild(editIcon);
 
 		const deleteLink = document.createElement("a");
-		deleteLink.href = "#";
 		deleteLink.setAttribute("id", `delete-${id}`);
 		const deleteIcon = document.createElement("i");
 		deleteIcon.classList.add("bi", "bi-x-square");
@@ -91,6 +89,12 @@ function createCards(data) {
 			e.preventDefault();
 			e.stopPropagation();
 			deleteDiary(id);
+		});
+
+		editLink.addEventListener("click", (e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			window.location.href = `html/diary.html?id=${id}`;
 		});
 	});
 }

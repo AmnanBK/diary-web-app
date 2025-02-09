@@ -146,24 +146,6 @@ body {
 	color: white;
 }
 
-@media (max-width: 1024px) {
-	.card-container {
-		grid-template-columns: repeat(3, minmax(200px, 1fr));
-	}
-}
-
-@media (max-width: 768px) {
-	.card-container {
-		grid-template-columns: repeat(2, minmax(200px, 1fr));
-	}
-}
-
-@media (max-width: 480px) {
-	.card-container {
-		grid-template-columns: 1fr;
-	}
-}
-
 form {
 	display: flex;
 	margin: auto;
@@ -188,8 +170,8 @@ textarea {
 	border-radius: 5px;
 	background-color: #f9f9f9;
 	transition: all 0.3s ease;
-	width: 100%; /* Ensures full-width on both input and textarea */
-	box-sizing: border-box; /* Prevents padding from affecting width */
+	width: 100%;
+	box-sizing: border-box;
 }
 
 input:focus,
@@ -218,9 +200,8 @@ textarea:focus {
 	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Optional: Set minimum height for textarea */
 textarea {
-	min-height: 50vh; /* Set to whatever height you prefer */
+	min-height: 50vh;
 }
 
 .form-title,
@@ -262,17 +243,29 @@ textarea {
 	cursor: pointer;
 }
 
+@media (max-width: 1024px) {
+	.card-container {
+		grid-template-columns: repeat(3, minmax(200px, 1fr));
+	}
+}
+
 @media (max-width: 768px) {
+	.card-container {
+		grid-template-columns: repeat(2, minmax(200px, 1fr));
+	}
 	#btn-add,
 	#btn-cancel {
-		width: 25%; /* Make buttons wider to fit text in smaller screens */
+		width: 25%;
 	}
 }
 
 @media (max-width: 480px) {
+	.card-container {
+		grid-template-columns: 1fr;
+	}
 	#btn-add,
 	#btn-cancel {
-		width: 30%; /* Make buttons even wider for very small screens */
+		width: 30%;
 	}
 }
 
