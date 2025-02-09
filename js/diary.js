@@ -30,12 +30,11 @@ addBtn.addEventListener("click", () => {
 		);
 		if (diaryIndex > -1) {
 			data.diaries[diaryIndex] = {
-				...data.diaries[diaryIndex],
+				id: diaryId,
 				title: title,
 				content: content,
 				created: new Date().toLocaleDateString(),
 			};
-			console.log("Diary updated:", data.diaries[diaryIndex]);
 		}
 	} else {
 		data.diaries.push({
