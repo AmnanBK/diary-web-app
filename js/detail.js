@@ -4,7 +4,6 @@ const id = urlParams.get("id");
 const data = JSON.parse(localStorage.getItem("userDiary")).diaries;
 
 const diary = data.find((d) => d.id == id);
-console.log(diary);
 
 const title = diary.title;
 document.title = title;
